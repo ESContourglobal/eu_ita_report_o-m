@@ -1,0 +1,83 @@
+
+db_tables:
+  example: "risk.example_db_table_name"
+  future_spot_table : "risk.power_future_spot"
+  future_residual_load_table : "risk.power_future_residual_load"
+
+azure_secrets:
+  secret_example: "this secret does not exist"
+
+env_var:
+  retry_times: 3
+  retry_delay: 600
+  look_back_days: 30
+
+paths:
+  main_eq_spot_path: '4_market_data/eq/eq_spot_prices_forecast/'
+  main_eq_load_path: '4_market_data/eq/eq_residual_production_forecast/'
+
+locations:
+  - at
+  - bg
+  - ch
+  - de
+  - es
+  - fr
+  - hu
+  - it-cnor
+  - it-csud
+  - it-nord
+  - it-sard
+  - it-sici
+  - it-sud
+  - it-pun
+  - pl
+  - pt
+
+timezones:
+  at: Europe/Vienna
+  bg: Europe/Sofia
+  ch: Europe/Zurich
+  de: Europe/Berlin
+  es: Europe/Madrid
+  fr: Europe/Paris
+  hu: Europe/Budapest
+  it-cnor: Europe/Rome
+  it-csud: Europe/Rome
+  it-nord: Europe/Rome
+  it-sard: Europe/Rome
+  it-sici: Europe/Rome
+  it-sud: Europe/Rome
+  it-pun: Europe/Rome
+  pl: Europe/Warsaw
+  pt: Europe/Lisbon
+
+location_to_db_code:
+  at: AT
+  be: BE
+  bg: BG
+  ch: CH
+  # CZ está en la base de datos, aunque no en tus locations actuales
+  cz: CZ
+  de: DE
+  es: SP
+  fr: FR
+  hu: HU
+  pl: PL
+  pt: PT
+
+  # Regiones italianas
+  it-pun: IT-PUN
+  it-cnor: IT-CNOR
+  it-csud: IT-CSUD
+  it-nord: IT-NORD
+  it-sard: IT-SARD
+  it-sici: IT-SICI
+  it-sud: IT-SUD
+  it-cala: IT-CALA
+
+  # Extras en la BD que podrías usar
+  uk: UK
+  ro: RO
+  gr: GR
+  ni: NI
