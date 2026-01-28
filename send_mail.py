@@ -148,18 +148,20 @@ def create_attachment_excel(report_path: str, month: int, year: int) -> Tuple[st
 
     # Rename columns
     if "inxieme_name" in df.columns:
+        df = df.sort_values(by=["inxieme_name"])
         df = df.rename(columns={"inxieme_name": "Plant", 
                                 "month": "Month", 
                                 "year": "Year", 
                                 "zone": "Zone", 
                                 "kite_total_prod_MWh": "Kit-E Production (MWh)", 
-                                "best_total_prod_surplus_MWh": "Prod Surplus (MWh)"}
+                                "best_total_prod_surplus_MWh": "Prod Grid Losses (MWh)"}
                         )
 
     report_filename = f"Monthly_Report_Production_{year}_{month:02d}.xlsx"
     report_full_path = os.path.join(report_path, report_filename)
+    sheet_name = f"{year}-{month:02d}"
 
-    df.to_excel(report_full_path, index=False)
+    df.to_excel(report_full_path, index=False,sheet_name=sheet_name)
     logger.info(f"Report created at {report_full_path}")
 
     return report_full_path, df
